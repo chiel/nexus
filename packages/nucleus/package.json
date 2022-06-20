@@ -1,0 +1,31 @@
+{
+	"name": "@chiel/nucleus",
+	"version": "0.0.0",
+	"main": "dist/nucleus",
+	"bin": "dist/nucleus",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:chiel/nexus.git",
+		"directory": "packages/nucleus"
+	},
+	"scripts": {
+		"build": "pnpm run clean && pnpm run compile",
+		"clean": "rm -rf dist",
+		"compile": "rollup -c",
+		"start": "pnpm run clean && rollup -cw"
+	},
+	"dependencies": {
+		"yargs": "^17.5.1"
+	},
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "^22.0.0",
+		"@rollup/plugin-json": "^4.1.0",
+		"@rollup/plugin-node-resolve": "^13.3.0",
+		"@rollup/plugin-typescript": "^8.3.3",
+		"@types/node": "^18.0.0",
+		"@types/yargs": "^17.0.10",
+		"rollup": "^2.75.6",
+		"tslib": "^2.4.0",
+		"typescript": "^4.7.3"
+	}
+}
