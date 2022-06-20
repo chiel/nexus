@@ -1,0 +1,6 @@
+{
+	"private": true,
+	"name": "@chiel/nexus",
+	"description": "A collection of oft-used packages.",
+	"repository": "git@github.com:chiel/nexus.git"
+}
