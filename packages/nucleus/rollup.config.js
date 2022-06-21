@@ -15,6 +15,7 @@ export default {
 		typescript(),
 	],
 	external: [
+		'chalk',
 		'yargs',
 		'yargs/helpers',
 	],
