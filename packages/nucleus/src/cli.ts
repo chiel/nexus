@@ -1,6 +1,4 @@
-import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
-
+import run from './run';
 import { logger } from './utils';
 
 process.on('uncaughtException', function(err) {
@@ -8,9 +6,4 @@ process.on('uncaughtException', function(err) {
 	process.exit(1);
 });
 
-yargs(hideBin(process.argv))
-	.usage('$0 <command> [options]')
-	.demandCommand()
-	.strict()
-	.help()
-	.argv
+run();
