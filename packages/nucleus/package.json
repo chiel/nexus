@@ -1,6 +1,6 @@
 {
 	"name": "@chiel/nucleus",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"main": "dist/nucleus",
 	"bin": "dist/nucleus",
 	"repository": {
