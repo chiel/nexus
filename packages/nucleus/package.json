@@ -1,4 +1,8 @@
 {
+	"publishConfig": {
+		"access": "public",
+		"directory": "dist"
+	},
 	"name": "@chiel/nucleus",
 	"version": "0.1.4",
 	"main": "dist/nucleus",
@@ -12,9 +16,10 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "pnpm run clean && pnpm run compile",
+		"build": "pnpm run clean && pnpm run compile && pnpm run copy",
 		"clean": "rm -rf dist",
 		"compile": "rollup -c",
+		"copy": "jq '.main |= sub(\"dist/\";\"\") | .bin |= sub(\"dist/\";\"\")' package.json > dist/package.json",
 		"start": "pnpm run clean && rollup -cw",
 		"test": "jest"
 	},
