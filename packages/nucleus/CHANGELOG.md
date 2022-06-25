@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.1.3...@chiel/nucleus@0.1.4) (2022-06-25)
+
+
+### Bug Fixes
+
+* **nucleus:** only publish dist directory ([74fa519](https://github.com/chiel/nexus/commit/74fa519e8473040552ac998e091ea39f02ce8c1a))
+
+
+
+
+
 ## [0.1.3](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.1.2...@chiel/nucleus@0.1.3) (2022-06-24)
 
 
