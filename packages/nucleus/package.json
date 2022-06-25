@@ -12,9 +12,6 @@
 		"url": "git@github.com:chiel/nexus.git",
 		"directory": "packages/nucleus"
 	},
-	"files": [
-		"dist"
-	],
 	"scripts": {
 		"build": "pnpm run clean && pnpm run compile && pnpm run copy",
 		"clean": "rm -rf dist",
