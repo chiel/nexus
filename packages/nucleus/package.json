@@ -16,9 +16,11 @@
 		"build": "pnpm run clean && pnpm run compile && pnpm run copy",
 		"clean": "rm -rf dist",
 		"compile": "rollup -c",
-		"copy": "jq '.main |= sub(\"dist/\";\"\") | .bin |= sub(\"dist/\";\"\")' package.json > dist/package.json",
+		"copy": "pnpm run copy:configs && pnpm run copy:manifest",
+		"copy:configs": "cp -R configs dist/configs",
+		"copy:manifest": "jq '.main |= sub(\"dist/\";\"\") | .bin |= sub(\"dist/\";\"\")' package.json > dist/package.json",
 		"start": "pnpm run clean && rollup -cw",
-		"test": "jest"
+		"test": "jest -c configs/jest.config.js"
 	},
 	"dependencies": {
 		"chalk": "^4.1.2",
