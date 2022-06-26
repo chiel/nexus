@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.2](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.3.1...@chiel/nucleus@0.3.2) (2022-06-26)
+
+
+### Bug Fixes
+
+* **nucleus:** add initial eslint config ([0620ead](https://github.com/chiel/nexus/commit/0620eadb414803e1d0a15e946d770f2e33a63c26))
+
+
+
+
+
 ## [0.3.1](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.3.0...@chiel/nucleus@0.3.1) (2022-06-26)
 
 
