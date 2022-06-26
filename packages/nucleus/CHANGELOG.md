@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.2.0...@chiel/nucleus@0.3.0) (2022-06-26)
+
+
+### Features
+
+* **nucleus:** add test command ([53daaec](https://github.com/chiel/nexus/commit/53daaece72f88236c78d010451c6b252ca51fb86))
+
+
+
+
+
 # [0.2.0](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.1.5...@chiel/nucleus@0.2.0) (2022-06-25)
 
 
