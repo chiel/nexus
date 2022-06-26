@@ -56,7 +56,7 @@ describe('handler', () => {
 
 		await handler(defaultArgs);
 		const dirname = path.resolve(__dirname, '..');
-		expect(run).toHaveBeenCalledWith(['-c', `${dirname}/configs/jest.config.js`]);
+		expect(run).toHaveBeenCalledWith(['-c', `${dirname}/configs/jest.js`]);
 	});
 
 	it('should run jest with coverage if the relevant flag is provided', async () => {

@@ -27,7 +27,7 @@ const command: CommandModule<{}, CommandOptions> = {
 	async handler(args) {
 		let jestConfigPath = `${process.cwd()}/jest.config.js`;
 		const hasJestConfig = await fileExists(jestConfigPath);
-		if (!hasJestConfig) jestConfigPath = `${__dirname}/configs/jest.config.js`
+		if (!hasJestConfig) jestConfigPath = `${__dirname}/configs/jest.js`
 
 		const runArgs: string[] = ['-c', jestConfigPath];
 		if (args.coverage) runArgs.push('--coverage');

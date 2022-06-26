@@ -20,7 +20,7 @@
 		"copy:configs": "cp -R configs dist/configs",
 		"copy:manifest": "jq '.main |= sub(\"dist/\";\"\") | .bin |= sub(\"dist/\";\"\")' package.json > dist/package.json",
 		"start": "pnpm run clean && rollup -cw",
-		"test": "jest -c configs/jest.config.js"
+		"test": "jest -c configs/jest.js"
 	},
 	"dependencies": {
 		"chalk": "^4.1.2",
