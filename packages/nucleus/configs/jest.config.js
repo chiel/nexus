@@ -9,6 +9,7 @@ module.exports = {
 		},
 	},
 	preset: 'ts-jest',
+	resetMocks: true,
 	restoreMocks: true,
 	rootDir: process.cwd(),
 	testMatch: ['**/__tests__/*.{ts,tsx}'],
