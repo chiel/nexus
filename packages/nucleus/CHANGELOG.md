@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.3.0...@chiel/nucleus@0.3.1) (2022-06-26)
+
+
+### Bug Fixes
+
+* **nucleus:** rename default jest config file ([7a3e3f9](https://github.com/chiel/nexus/commit/7a3e3f9592b6c8c6ac3e47696b3d74967e8b6a11))
+
+
+
+
+
 # [0.3.0](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.2.0...@chiel/nucleus@0.3.0) (2022-06-26)
 
 
