@@ -19,4 +19,4 @@ export default {
 		'yargs',
 		'yargs/helpers',
 	],
-}
+};

@@ -7,4 +7,4 @@ export default {
 	info: (msg: string) => {
 		console.info(chalk.black.bgBlue(' INFO '), chalk.blue(msg));
 	},
-}
+};

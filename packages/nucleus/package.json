@@ -19,11 +19,16 @@
 		"copy": "pnpm run copy:configs && pnpm run copy:manifest",
 		"copy:configs": "cp -R configs dist/configs",
 		"copy:manifest": "jq '.main |= sub(\"dist/\";\"\") | .bin |= sub(\"dist/\";\"\")' package.json > dist/package.json",
+		"lint": "eslint -c configs/eslint.js --ext .js,.ts,.tsx .",
 		"start": "pnpm run clean && rollup -cw",
 		"test": "jest -c configs/jest.js"
 	},
 	"dependencies": {
+		"@typescript-eslint/eslint-plugin": "^5.29.0",
+		"@typescript-eslint/parser": "^5.29.0",
 		"chalk": "^4.1.2",
+		"eslint": "^8.18.0",
+		"eslint-plugin-jest": "^26.5.3",
 		"jest": "^28.1.1",
 		"ts-jest": "^28.0.5",
 		"typescript": "^4.7.3",

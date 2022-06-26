@@ -10,5 +10,5 @@ export default function run() {
 		.demandCommand()
 		.strict()
 		.help()
-		.argv
+		.argv;
 }

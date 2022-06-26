@@ -1,3 +1,4 @@
+// eslint-disable-next-line jest/no-jest-import
 import { run } from 'jest';
 import path from 'path';
 
@@ -37,7 +38,7 @@ describe('command', () => {
 describe('handler', () => {
 	const { handler } = command;
 
-	const defaultArgs = { '_': [], $0: '', coverage: false, watch: false };
+	const defaultArgs = { _: [], $0: '', coverage: false, watch: false };
 
 	beforeEach(() => {
 		jest.spyOn(process, 'cwd').mockReturnValue('/path/to');
