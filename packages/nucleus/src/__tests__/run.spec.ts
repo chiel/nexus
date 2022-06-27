@@ -15,7 +15,7 @@ describe('run', () => {
 		y.command = jest.fn(() => y);
 		y.demandCommand = jest.fn(() => y);
 		y.help = jest.fn(() => y);
-		y.strict = jest.fn(() => y);
+		y.parserConfiguration = jest.fn(() => y);
 		y.usage = jest.fn(() => y);
 
 		(yargs as jest.Mock).mockReturnValue(y);
@@ -28,10 +28,10 @@ describe('run', () => {
 		run();
 		expect(hideBin).toHaveBeenCalledWith(['test']);
 		expect(yargs).toHaveBeenCalledWith(['--arg']);
-		expect(y.command).toHaveBeenCalledWith('test-command');
+		expect(y.parserConfiguration).toHaveBeenCalledWith({ 'unknown-options-as-args': true });
 		expect(y.usage).toHaveBeenCalledWith('Usage: $0 <command> [options]');
+		expect(y.command).toHaveBeenCalledWith('test-command');
 		expect(y.demandCommand).toHaveBeenCalledWith();
-		expect(y.strict).toHaveBeenCalledWith();
 		expect(y.help).toHaveBeenCalledWith();
 	});
 });

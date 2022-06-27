@@ -17,19 +17,6 @@ describe('command', () => {
 		expect(command).toEqual({
 			command: 'test',
 			describe: 'Run tests',
-			builder: {
-				coverage: {
-					boolean: true,
-					default: false,
-					description: 'Collect coverage',
-				},
-				watch: {
-					alias: 'w',
-					boolean: true,
-					default: false,
-					description: 'Run tests in watch mode',
-				},
-			},
 			handler: expect.any(Function),
 		});
 	});
@@ -60,17 +47,10 @@ describe('handler', () => {
 		expect(run).toHaveBeenCalledWith(['-c', `${dirname}/configs/jest.js`]);
 	});
 
-	it('should run jest with coverage if the relevant flag is provided', async () => {
+	it('should pass any extra args straight to jest', async () => {
 		(fileExists as jest.Mock).mockResolvedValue(true);
 
-		await handler({ ...defaultArgs, coverage: true });
-		expect(run).toHaveBeenCalledWith(['-c', '/path/to/jest.config.js', '--coverage']);
-	});
-
-	it('should run jest in watch mode if the relevant flag is provided', async () => {
-		(fileExists as jest.Mock).mockResolvedValue(true);
-
-		await handler({ ...defaultArgs, watch: true });
-		expect(run).toHaveBeenCalledWith(['-c', '/path/to/jest.config.js', '--watch']);
+		await handler({ ...defaultArgs, _: ['test', '--whatever'] });
+		expect(run).toHaveBeenCalledWith(['-c', '/path/to/jest.config.js', '--whatever']);
 	});
 });
