@@ -4,10 +4,13 @@ module.exports = {
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
 		'plugin:jest/recommended',
+		'plugin:react/recommended',
+		'plugin:react/jsx-runtime',
 	],
 	plugins: [
 		'@typescript-eslint',
 		'jest',
+		'react',
 	],
 	env: {
 		browser: true,
