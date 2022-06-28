@@ -14,7 +14,7 @@ module.exports = {
 		es2021: true,
 		node: true,
 	},
-
+	ignorePatterns: ['dist'],
 	rules: {
 		'accessor-pairs': 'error',
 		'array-bracket-newline': ['error', { multiline: true }],
