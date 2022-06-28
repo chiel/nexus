@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.3](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.3.2...@chiel/nucleus@0.3.3) (2022-06-28)
+
+
+### Bug Fixes
+
+* **nucleus:** add react support to eslint ([05c5d9b](https://github.com/chiel/nexus/commit/05c5d9bc495299e5a57c7d2485a134b1a3f020bc))
+* **nucleus:** ignore dist directory in eslint ([204ae32](https://github.com/chiel/nexus/commit/204ae32704d97cde10809995d6b0a8a73ccb3fe1))
+* **nucleus:** pass-through additional args to jest ([e7533b1](https://github.com/chiel/nexus/commit/e7533b1460824eea87310c0e1f1fbb3c64e42a90))
+* **nucleus:** publish tsconfig ([4b4ab1c](https://github.com/chiel/nexus/commit/4b4ab1c11a7d895514af606db985b6eb4071c569))
+
+
+
+
+
 ## [0.3.2](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.3.1...@chiel/nucleus@0.3.2) (2022-06-26)
 
 
