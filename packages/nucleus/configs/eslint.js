@@ -120,7 +120,6 @@ module.exports = {
 		'no-shadow': ['error', { allow: ['err'] }],
 		'no-tabs': ['error', { allowIndentationTabs: true }],
 		'no-trailing-spaces': 'error',
-		'no-undefined': 'error',
 		'no-underscore-dangle': 'error',
 		'no-unmodified-loop-condition': 'error',
 		'no-unneeded-ternary': 'error',
