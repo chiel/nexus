@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.4](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.3.3...@chiel/nucleus@0.3.4) (2022-06-29)
+
+
+### Bug Fixes
+
+* **nucleus:** make @types/jest a dependency ([b20e1b5](https://github.com/chiel/nexus/commit/b20e1b5a5ad3cb625984306d6f052e8759035984))
+
+
+
+
+
 ## [0.3.3](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.3.2...@chiel/nucleus@0.3.3) (2022-06-28)
 
 
