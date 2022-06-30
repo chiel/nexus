@@ -16,7 +16,10 @@ export default {
 	],
 	external: [
 		'chalk',
-		'yargs',
+		'eslint',
+		'fs/promises',
+		'jest',
 		'yargs/helpers',
+		'yargs/yargs',
 	],
 };
