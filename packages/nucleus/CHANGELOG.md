@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.3.4...@chiel/nucleus@0.4.0) (2022-06-30)
+
+
+### Bug Fixes
+
+* **nucleus:** get rid of no-undefined rule ([32ce0c4](https://github.com/chiel/nexus/commit/32ce0c464b4bfc87aa9c309911fbebf07b078231))
+
+
+### Features
+
+* **nucleus:** add lint command ([741a853](https://github.com/chiel/nexus/commit/741a8533d8addcf10691375371888ad459035842))
+
+
+
+
+
 ## [0.3.4](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.3.3...@chiel/nucleus@0.3.4) (2022-06-29)
 
 
