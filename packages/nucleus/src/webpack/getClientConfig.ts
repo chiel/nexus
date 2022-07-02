@@ -20,6 +20,15 @@ export default function getClientConfig({ entry, env }: Options): Configuration 
 		resolve: {
 			extensions: ['.tsx', '.ts', '.js', '.json'],
 		},
+		module: {
+			rules: [
+				{
+					test: /\.tsx?$/u,
+					exclude: /node_modules/u,
+					loader: 'ts-loader',
+				},
+			],
+		},
 		plugins: [
 			getHtmlWebpackPlugin(),
 		],

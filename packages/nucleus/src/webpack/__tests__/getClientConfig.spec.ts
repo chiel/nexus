@@ -13,6 +13,15 @@ describe('getClientConfig', () => {
 			devtool: 'cheap-module-source-map',
 			entry: { app: 'entry' },
 			resolve: { extensions: ['.tsx', '.ts', '.js', '.json'] },
+			module: {
+				rules: [
+					{
+						test: /\.tsx?$/u,
+						exclude: /node_modules/u,
+						loader: 'ts-loader',
+					},
+				],
+			},
 			plugins: ['html-webpack-plugin'],
 			stats: 'errors-warnings',
 			infrastructureLogging: { level: 'none' },
@@ -26,6 +35,15 @@ describe('getClientConfig', () => {
 			devtool: 'source-map',
 			entry: { app: 'entry' },
 			resolve: { extensions: ['.tsx', '.ts', '.js', '.json'] },
+			module: {
+				rules: [
+					{
+						test: /\.tsx?$/u,
+						exclude: /node_modules/u,
+						loader: 'ts-loader',
+					},
+				],
+			},
 			plugins: ['html-webpack-plugin'],
 			stats: 'errors-warnings',
 			infrastructureLogging: { level: 'none' },

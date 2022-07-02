@@ -38,6 +38,7 @@ importers:
       jest: ^28.1.1
       rollup: ^2.75.6
       ts-jest: ^28.0.5
+      ts-loader: ^9.3.1
       tslib: ^2.4.0
       typescript: ^4.7.3
       webpack: ^5.73.0
@@ -54,6 +55,7 @@ importers:
       html-webpack-plugin: 5.5.0_webpack@5.73.0
       jest: 28.1.1_@types+node@18.0.0
       ts-jest: 28.0.5_zv2ltmnvcc5apkdaecods742je
+      ts-loader: 9.3.1_3o2jfq6vfqxns3sz6wn2nnc3ei
       typescript: 4.7.4
       webpack: 5.73.0
       webpack-dev-server: 4.9.3_webpack@5.73.0
@@ -7860,6 +7862,21 @@ packages:
       semver: 7.3.7
       typescript: 4.7.4
       yargs-parser: 21.0.1
+    dev: false
+
+  /ts-loader/9.3.1_3o2jfq6vfqxns3sz6wn2nnc3ei:
+    resolution: {integrity: sha512-OkyShkcZTsTwyS3Kt7a4rsT/t2qvEVQuKCTg4LJmpj9fhFR7ukGdZwV6Qq3tRUkqcXtfGpPR7+hFKHCG/0d3Lw==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      typescript: '*'
+      webpack: ^5.0.0
+    dependencies:
+      chalk: 4.1.2
+      enhanced-resolve: 5.10.0
+      micromatch: 4.0.5
+      semver: 7.3.7
+      typescript: 4.7.4
+      webpack: 5.73.0
     dev: false
 
   /ts-node/10.8.1_qiyc72axg2v44xl4yovan2v55u:
