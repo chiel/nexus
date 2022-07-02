@@ -18,7 +18,7 @@ describe('getClientConfig', () => {
 					{
 						test: /\.tsx?$/u,
 						exclude: /node_modules/u,
-						loader: 'ts-loader',
+						loader: expect.stringContaining('ts-loader'),
 					},
 				],
 			},
@@ -40,7 +40,7 @@ describe('getClientConfig', () => {
 					{
 						test: /\.tsx?$/u,
 						exclude: /node_modules/u,
-						loader: 'ts-loader',
+						loader: expect.stringContaining('ts-loader'),
 					},
 				],
 			},

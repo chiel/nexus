@@ -25,7 +25,7 @@ export default function getClientConfig({ entry, env }: Options): Configuration 
 				{
 					test: /\.tsx?$/u,
 					exclude: /node_modules/u,
-					loader: 'ts-loader',
+					loader: require.resolve('ts-loader'),
 				},
 			],
 		},
