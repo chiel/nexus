@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.2](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.5.1...@chiel/nucleus@0.5.2) (2022-07-02)
+
+
+### Bug Fixes
+
+* **nucleus:** add ts-loader ([459c809](https://github.com/chiel/nexus/commit/459c809cf21cd1087af70d1012836a3cc84dfa63))
+
+
+
+
+
 ## [0.5.1](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.5.0...@chiel/nucleus@0.5.1) (2022-07-02)
 
 
