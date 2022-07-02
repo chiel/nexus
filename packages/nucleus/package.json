@@ -16,10 +16,9 @@
 		"build": "pnpm run clean && pnpm run compile && pnpm run copy",
 		"clean": "rm -rf dist",
 		"compile": "rollup -c",
-		"copy": "pnpm run copy:configs && pnpm run copy:manifest",
-		"copy:configs": "cp -R configs dist/configs",
-		"copy:manifest": "jq '.main |= sub(\"dist/\";\"\") | .bin |= sub(\"dist/\";\"\")' package.json > dist/package.json",
+		"copy": "cp -R configs dist/configs",
 		"lint": "eslint -c configs/eslint.js --ext .js,.ts,.tsx .",
+		"prepack": "jq '.main |= sub(\"dist/\";\"\") | .bin |= sub(\"dist/\";\"\")' package.json > dist/package.json",
 		"start": "pnpm run clean && rollup -cw",
 		"test": "jest -c configs/jest.js"
 	},
