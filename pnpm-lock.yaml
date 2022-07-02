@@ -4,7 +4,7 @@ importers:
 
   .:
     specifiers:
-      '@chiel/nucleus': workspace:^0.3.1
+      '@chiel/nucleus': workspace:*
       '@commitlint/cli': ^17.0.2
       '@commitlint/config-conventional': ^17.0.2
       husky: ^8.0.1
