@@ -20,7 +20,7 @@ module.exports = {
 	ignorePatterns: ['dist'],
 	rules: {
 		'accessor-pairs': 'error',
-		'array-bracket-newline': ['error', { multiline: true }],
+		'array-bracket-newline': ['error', 'consistent'],
 		'array-bracket-spacing': ['error', 'never'],
 		'array-element-newline': ['error', 'consistent'],
 		'arrow-body-style': ['error', 'as-needed'],
@@ -118,7 +118,6 @@ module.exports = {
 		'no-self-compare': 'error',
 		'no-sequences': 'error',
 		'no-shadow': ['error', { allow: ['err'] }],
-		'no-tabs': ['error', { allowIndentationTabs: true }],
 		'no-trailing-spaces': 'error',
 		'no-underscore-dangle': 'error',
 		'no-unmodified-loop-condition': 'error',
