@@ -41,6 +41,14 @@ const command: CommandModule<unknown, CommandOptions> = {
 			logger.info('Starting development server...');
 			await server.start();
 			logger.info(`Development server listening on http://localhost:${args.port}`);
+
+			const shutdown = () => {
+				server.stop();
+				process.exit(0);
+			};
+
+			process.on('SIGINT', shutdown);
+			process.on('SIGTERM', shutdown);
 		} catch (err: unknown) {
 			const msg = err instanceof Error ? err.message : err as string;
 			logger.error(msg);

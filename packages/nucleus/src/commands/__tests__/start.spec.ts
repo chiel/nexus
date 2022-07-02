@@ -37,13 +37,16 @@ describe('handler', () => {
 	const defaultArgs = { _: [], $0: '', port: 3000 };
 
 	let start: jest.Mock;
+	let stop: jest.Mock;
 
 	beforeEach(() => {
 		jest.spyOn(process, 'exit').mockImplementation();
+		jest.spyOn(process, 'on').mockImplementation();
 
 		start = jest.fn().mockImplementation(() => Promise.resolve());
+		stop = jest.fn().mockImplementation(() => Promise.resolve());
 		(webpack as unknown as jest.Mock).mockReturnValue('compiler');
-		(WebpackDevServer as unknown as jest.Mock).mockReturnValue({ start });
+		(WebpackDevServer as unknown as jest.Mock).mockReturnValue({ start, stop });
 	});
 
 	it('should start a development server with default args', async () => {
@@ -61,6 +64,18 @@ describe('handler', () => {
 		expect(logger.info).toHaveBeenCalledWith('Starting development server...');
 		expect(start).toHaveBeenCalledWith();
 		expect(logger.info).toHaveBeenCalledWith('Development server listening on http://localhost:3000');
+	});
+
+	it('should shut the server down gracefully', async () => {
+		await handler(defaultArgs);
+
+		expect(process.on).toHaveBeenCalledWith('SIGINT', expect.any(Function));
+		expect(process.on).toHaveBeenCalledWith('SIGTERM', expect.any(Function));
+
+		const [[, shutdown]] = (process.on as jest.Mock).mock.calls;
+		shutdown();
+		expect(stop).toHaveBeenCalledWith();
+		expect(process.exit).toHaveBeenCalledWith(0);
 	});
 
 	it('should log an error if a proper error happens', async () => {
