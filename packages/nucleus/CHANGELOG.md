@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.5.0...@chiel/nucleus@0.5.1) (2022-07-02)
+
+
+### Bug Fixes
+
+* **nucleus:** gracefully shut down dev server ([c4e98ad](https://github.com/chiel/nexus/commit/c4e98ad274668c2b1b738a9f2cee349699be517e))
+* **nucleus:** only copy package.json prepack ([9c40c16](https://github.com/chiel/nexus/commit/9c40c1638748de290f22c11213908f627f0f2fe7))
+
+
+
+
+
 # [0.5.0](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.4.0...@chiel/nucleus@0.5.0) (2022-07-02)
 
 
