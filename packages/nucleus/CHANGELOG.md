@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.4](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.5.3...@chiel/nucleus@0.5.4) (2022-07-02)
+
+
+### Bug Fixes
+
+* **nucleus:** add basic html template ([2562b28](https://github.com/chiel/nexus/commit/2562b28a906513b09c454d5de6d49d5ed7d85b3e))
+
+
+
+
+
 ## [0.5.3](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.5.2...@chiel/nucleus@0.5.3) (2022-07-02)
 
 
