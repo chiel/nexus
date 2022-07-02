@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.4.0...@chiel/nucleus@0.5.0) (2022-07-02)
+
+
+### Bug Fixes
+
+* **nucleus:** ignore dist directory in jest ([f7710c3](https://github.com/chiel/nexus/commit/f7710c3f5afe0da28e09f0bd5ebfca316826dd36))
+* **nucleus:** update eslint config ([2cfe345](https://github.com/chiel/nexus/commit/2cfe34568140ad79657af253ac8a948847cf04a0))
+
+
+### Features
+
+* **nucleus:** add basic start command ([b3c1531](https://github.com/chiel/nexus/commit/b3c1531d04797c0a92ae68c7a22d8c2afe7751a0))
+
+
+
+
+
 # [0.4.0](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.3.4...@chiel/nucleus@0.4.0) (2022-06-30)
 
 
