@@ -6,6 +6,7 @@ import run from '../run';
 jest.mock('yargs/helpers', () => ({ hideBin: jest.fn() }));
 jest.mock('yargs/yargs', () => jest.fn());
 jest.mock('../commands/lint', () => 'lint-command');
+jest.mock('../commands/start', () => 'start-command');
 jest.mock('../commands/test', () => 'test-command');
 
 describe('run', () => {
@@ -32,6 +33,7 @@ describe('run', () => {
 		expect(y.parserConfiguration).toHaveBeenCalledWith({ 'unknown-options-as-args': true });
 		expect(y.usage).toHaveBeenCalledWith('Usage: $0 <command> [options]');
 		expect(y.command).toHaveBeenCalledWith('lint-command');
+		expect(y.command).toHaveBeenCalledWith('start-command');
 		expect(y.command).toHaveBeenCalledWith('test-command');
 		expect(y.demandCommand).toHaveBeenCalledWith();
 		expect(y.help).toHaveBeenCalledWith();
