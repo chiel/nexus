@@ -8,6 +8,7 @@ module.exports = {
 			statements: 100,
 		},
 	},
+	modulePathIgnorePatterns: ['<rootDir>/dist'],
 	preset: 'ts-jest',
 	resetMocks: true,
 	restoreMocks: true,
