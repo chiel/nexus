@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.5.4...@chiel/nucleus@0.6.0) (2022-07-04)
+
+
+### Features
+
+* **nucleus:** add support for config file ([053a41e](https://github.com/chiel/nexus/commit/053a41ec3911d3129ae1adfcdfdda3d2cc82b48c))
+
+
+
+
+
 ## [0.5.4](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.5.3...@chiel/nucleus@0.5.4) (2022-07-02)
 
 
