@@ -27,6 +27,7 @@ importers:
       '@types/eslint': ^8.4.3
       '@types/jest': ^28.1.3
       '@types/node': ^18.0.0
+      '@types/prompts': ^2.0.14
       '@types/yargs': ^17.0.10
       '@typescript-eslint/eslint-plugin': ^5.29.0
       '@typescript-eslint/parser': ^5.29.0
@@ -36,6 +37,7 @@ importers:
       eslint-plugin-react: ^7.30.1
       html-webpack-plugin: ^5.5.0
       jest: ^28.1.1
+      prompts: ^2.4.2
       rollup: ^2.75.6
       ts-jest: ^28.0.5
       ts-loader: ^9.3.1
@@ -54,6 +56,7 @@ importers:
       eslint-plugin-react: 7.30.1_eslint@8.18.0
       html-webpack-plugin: 5.5.0_webpack@5.73.0
       jest: 28.1.1_@types+node@18.0.0
+      prompts: 2.4.2
       ts-jest: 28.0.5_zv2ltmnvcc5apkdaecods742je
       ts-loader: 9.3.1_3o2jfq6vfqxns3sz6wn2nnc3ei
       typescript: 4.7.4
@@ -67,6 +70,7 @@ importers:
       '@rollup/plugin-typescript': 8.3.3_g4qkabtmybowem44p7ts7jnbqm
       '@types/eslint': 8.4.3
       '@types/node': 18.0.0
+      '@types/prompts': 2.0.14
       '@types/yargs': 17.0.10
       rollup: 2.75.7
       tslib: 2.4.0
@@ -2183,6 +2187,12 @@ packages:
   /@types/prettier/2.6.3:
     resolution: {integrity: sha512-ymZk3LEC/fsut+/Q5qejp6R9O1rMxz3XaRHDV6kX8MrGAhOSPqVARbDi+EZvInBpw+BnCX3TD240byVkOfQsHg==}
     dev: false
+
+  /@types/prompts/2.0.14:
+    resolution: {integrity: sha512-HZBd99fKxRWpYCErtm2/yxUZv6/PBI9J7N4TNFffl5JbrYMHBwF25DjQGTW3b3jmXq+9P6/8fCIb2ee57BFfYA==}
+    dependencies:
+      '@types/node': 18.0.0
+    dev: true
 
   /@types/qs/6.9.7:
     resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==}

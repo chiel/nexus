@@ -21,6 +21,7 @@ export default {
 		'html-webpack-plugin',
 		'jest',
 		'path',
+		'prompts',
 		'webpack',
 		'webpack-dev-server',
 		'yargs/helpers',

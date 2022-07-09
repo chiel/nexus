@@ -7,6 +7,7 @@ import { getConfig } from '../utils';
 jest.mock('yargs/helpers', () => ({ hideBin: jest.fn() }));
 jest.mock('yargs/yargs', () => jest.fn());
 jest.mock('../commands/lint', () => 'lint-command');
+jest.mock('../commands/scaffold', () => 'scaffold-command');
 jest.mock('../commands/start', () => 'start-command');
 jest.mock('../commands/test', () => 'test-command');
 jest.mock('../utils', () => ({ getConfig: jest.fn() }));
@@ -38,6 +39,7 @@ describe('run', () => {
 		expect(y.parserConfiguration).toHaveBeenCalledWith({ 'unknown-options-as-args': true });
 		expect(y.usage).toHaveBeenCalledWith('Usage: $0 <command> [options]');
 		expect(y.command).toHaveBeenCalledWith('lint-command');
+		expect(y.command).toHaveBeenCalledWith('scaffold-command');
 		expect(y.command).toHaveBeenCalledWith('start-command');
 		expect(y.command).toHaveBeenCalledWith('test-command');
 		expect(y.demandCommand).toHaveBeenCalledWith();
