@@ -17,6 +17,19 @@ const command: CommandModule = {
 					name: 'name',
 					message: 'Package name',
 				},
+				{
+					type: 'text',
+					name: 'repository',
+					message: 'Repository',
+				},
+				{
+					type: 'toggle',
+					name: 'monorepo',
+					message: 'Is this package part of a monorepo?',
+					initial: true,
+					active: 'yes',
+					inactive: 'no',
+				},
 			]);
 
 			const dirName = answers.name.replace(/^[^/]+\//u, '');
@@ -27,8 +40,19 @@ const command: CommandModule = {
 			await mkdir(dir);
 
 			const pkg = {
+				publishConfig: {
+					access: 'private',
+					directory: 'dist',
+				},
 				name: answers.name,
 				version: '0.0.0',
+				repository: !answers.monorepo
+					? answers.repository
+					: {
+						type: 'git',
+						url: answers.repository,
+						directory: `packages/${dirName}`,
+					},
 			};
 
 			console.info('Creating', chalk.green('package.json'), 'in', chalk.green(dirName));

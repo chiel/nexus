@@ -24,7 +24,11 @@ describe('command', () => {
 describe('handler', () => {
 	const { handler } = command;
 	const defaultArgs = { _: [], $0: '' };
-	const defaultAnswers = { name: '@chiel/whatever' };
+	const defaultAnswers = {
+		name: '@chiel/whatever',
+		repository: 'git@github.com:chiel/whatever.git',
+		monorepo: false,
+	};
 
 	beforeEach(() => {
 		jest.spyOn(console, 'error').mockImplementation();
@@ -40,15 +44,24 @@ describe('handler', () => {
 
 	it('should ask some questions about what kind of package to create', async () => {
 		await handler(defaultArgs);
-		expect(prompts).toHaveBeenCalledWith([{ type: 'text', name: 'name', message: 'Package name' }]);
+		expect(prompts).toHaveBeenCalledWith([
+			{ type: 'text', name: 'name', message: 'Package name' },
+			{ type: 'text', name: 'repository', message: 'Repository' },
+			{ type: 'toggle', name: 'monorepo', message: 'Is this package part of a monorepo?', initial: true, active: 'yes', inactive: 'no' },
+		]);
 	});
 
 	it('should should create a directory with a package.json for scoped packages', async () => {
 		await handler(defaultArgs);
 
 		const pkg = JSON.stringify({
+			publishConfig: {
+				access: 'private',
+				directory: 'dist',
+			},
 			name: '@chiel/whatever',
 			version: '0.0.0',
+			repository: 'git@github.com:chiel/whatever.git',
 		}, null, '  ');
 
 		expect(mkdir).toHaveBeenCalledWith('/path/to/whatever');
@@ -65,8 +78,13 @@ describe('handler', () => {
 		await handler(defaultArgs);
 
 		const pkg = JSON.stringify({
+			publishConfig: {
+				access: 'private',
+				directory: 'dist',
+			},
 			name: 'beepboop',
 			version: '0.0.0',
+			repository: 'git@github.com:chiel/whatever.git',
 		}, null, '  ');
 
 		expect(mkdir).toHaveBeenCalledWith('/path/to/beepboop');
@@ -75,6 +93,28 @@ describe('handler', () => {
 		expect(console.info).toHaveBeenCalledWith('Creating directory', chalk.green('beepboop'));
 		expect(console.info).toHaveBeenCalledWith('Creating', chalk.green('package.json'), 'in', chalk.green('beepboop'));
 		expect(console.info).toHaveBeenCalledWith('Done!');
+	});
+
+	it('should change the package.json repository field for monorepo packages', async () => {
+		(prompts as unknown as jest.Mock).mockResolvedValue({ ...defaultAnswers, monorepo: true });
+
+		await handler(defaultArgs);
+
+		const pkg = JSON.stringify({
+			publishConfig: {
+				access: 'private',
+				directory: 'dist',
+			},
+			name: '@chiel/whatever',
+			version: '0.0.0',
+			repository: {
+				type: 'git',
+				url: 'git@github.com:chiel/whatever.git',
+				directory: 'packages/whatever',
+			},
+		}, null, '  ');
+
+		expect(writeFile).toHaveBeenCalledWith('/path/to/whatever/package.json', pkg, 'utf8');
 	});
 
 	it('should log an error and exit if a proper error happens', async () => {
