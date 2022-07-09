@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.6.0...@chiel/nucleus@0.7.0) (2022-07-09)
+
+
+### Features
+
+* **nucleus:** add skeleton for scaffold command ([753a6d3](https://github.com/chiel/nexus/commit/753a6d31dcc0237a44cd749605fad44084a46f97))
+
+
+
+
+
 # [0.6.0](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.5.4...@chiel/nucleus@0.6.0) (2022-07-04)
 
 
