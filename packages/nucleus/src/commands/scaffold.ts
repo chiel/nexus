@@ -4,7 +4,7 @@ import path from 'path';
 import prompts from 'prompts';
 import { CommandModule } from 'yargs';
 
-import { getPackageJson, logger } from '../utils';
+import { applyTemplate, getPackageJson, logger } from '../utils';
 
 const command: CommandModule = {
 	command: 'scaffold',
@@ -44,6 +44,21 @@ const command: CommandModule = {
 				name: answers.name,
 				repository: answers.repository,
 			});
+
+			const templates: { name: string, dest: string }[] = [
+				{ name: 'base', dest: dir },
+			];
+
+			const next = async (): Promise<void> => {
+				const template = templates.shift();
+				if (!template) return;
+
+				await applyTemplate(template.name, template.dest);
+
+				await next();
+			};
+
+			await next();
 
 			console.info('Creating', chalk.green('package.json'), 'in', chalk.green(dirName));
 			await writeFile(path.join(dir, 'package.json'), JSON.stringify(pkg, null, '\t'), 'utf8');

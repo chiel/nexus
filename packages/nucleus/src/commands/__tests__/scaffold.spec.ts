@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import { mkdir, writeFile } from 'fs/promises';
 import prompts from 'prompts';
 
-import { getPackageJson, logger } from '../../utils';
+import { applyTemplate, getPackageJson, logger } from '../../utils';
 import command from '../scaffold';
 
 jest.mock('fs/promises');
@@ -35,6 +35,7 @@ describe('handler', () => {
 		jest.spyOn(process, 'cwd').mockReturnValue('/path/to');
 		jest.spyOn(process, 'exit').mockImplementation();
 
+		(applyTemplate as jest.Mock).mockReturnValue({});
 		(getPackageJson as jest.Mock).mockReturnValue({ name: '@chiel/whatever' });
 		(mkdir as jest.Mock).mockImplementation();
 		(writeFile as jest.Mock).mockImplementation();
@@ -49,6 +50,12 @@ describe('handler', () => {
 			{ type: 'text', name: 'repository', message: 'Repository' },
 			{ type: 'toggle', name: 'monorepo', message: 'Is this package part of a monorepo?', initial: true, active: 'yes', inactive: 'no' },
 		]);
+	});
+
+	it('should always apply the base template', async () => {
+		await handler(defaultArgs);
+
+		expect(applyTemplate).toHaveBeenCalledWith('base', '/path/to/whatever');
 	});
 
 	it('should should create a directory with a package.json for scoped packages', async () => {

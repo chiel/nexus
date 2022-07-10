@@ -16,7 +16,7 @@
 		"build": "pnpm run clean && pnpm run compile && pnpm run copy",
 		"clean": "rm -rf dist",
 		"compile": "rollup -c",
-		"copy": "cp -R configs dist/configs",
+		"copy": "cp -R configs dist/configs && cp -R src/templates dist/templates",
 		"lint": "eslint -c configs/eslint.js --ext .js,.ts,.tsx .",
 		"prepack": "jq '.main |= sub(\"dist/\";\"\") | .bin |= sub(\"dist/\";\"\")' package.json > dist/package.json",
 		"start": "pnpm run clean && rollup -cw",
