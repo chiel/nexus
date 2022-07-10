@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.7.0...@chiel/nucleus@0.7.1) (2022-07-10)
+
+
+### Bug Fixes
+
+* **nucleus:** add more stuff to scaffold package ([5049912](https://github.com/chiel/nexus/commit/504991202a728335fa2062e8e90f4a017c64f743))
+* **nucleus:** move package json out of scaffold ([5901093](https://github.com/chiel/nexus/commit/59010931c328b96c3222b5b7ad9f3ea9652cd5c5))
+
+
+
+
+
 # [0.7.0](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.6.0...@chiel/nucleus@0.7.0) (2022-07-09)
 
 
