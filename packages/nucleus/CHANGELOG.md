@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.2](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.7.1...@chiel/nucleus@0.7.2) (2022-07-10)
+
+
+### Bug Fixes
+
+* **nucleus:** copy template files on scaffold ([24878f2](https://github.com/chiel/nexus/commit/24878f20aa31b7430931ec0db456dfdf4e4e882c))
+
+
+
+
+
 ## [0.7.1](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.7.0...@chiel/nucleus@0.7.1) (2022-07-10)
 
 
