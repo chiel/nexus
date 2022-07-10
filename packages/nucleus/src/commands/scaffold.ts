@@ -4,7 +4,7 @@ import path from 'path';
 import prompts from 'prompts';
 import { CommandModule } from 'yargs';
 
-import { logger } from '../utils';
+import { getPackageJson, logger } from '../utils';
 
 const command: CommandModule = {
 	command: 'scaffold',
@@ -39,24 +39,14 @@ const command: CommandModule = {
 			console.info('Creating directory', chalk.green(dirName));
 			await mkdir(dir);
 
-			const pkg = {
-				publishConfig: {
-					access: 'private',
-					directory: 'dist',
-				},
+			const pkg = getPackageJson({
+				monorepo: answers.monorepo,
 				name: answers.name,
-				version: '0.0.0',
-				repository: !answers.monorepo
-					? answers.repository
-					: {
-						type: 'git',
-						url: answers.repository,
-						directory: `packages/${dirName}`,
-					},
-			};
+				repository: answers.repository,
+			});
 
 			console.info('Creating', chalk.green('package.json'), 'in', chalk.green(dirName));
-			await writeFile(path.join(dir, 'package.json'), JSON.stringify(pkg, null, '  '), 'utf8');
+			await writeFile(path.join(dir, 'package.json'), JSON.stringify(pkg, null, '\t'), 'utf8');
 
 			console.info('Done!');
 		} catch (err: unknown) {

@@ -2,14 +2,12 @@ import chalk from 'chalk';
 import { mkdir, writeFile } from 'fs/promises';
 import prompts from 'prompts';
 
-import { logger } from '../../utils';
+import { getPackageJson, logger } from '../../utils';
 import command from '../scaffold';
 
 jest.mock('fs/promises');
 jest.mock('prompts');
-jest.mock('../../utils', () => ({
-	logger: { error: jest.fn() },
-}));
+jest.mock('../../utils');
 
 describe('command', () => {
 	it('should properly configure the command', () => {
@@ -33,9 +31,11 @@ describe('handler', () => {
 	beforeEach(() => {
 		jest.spyOn(console, 'error').mockImplementation();
 		jest.spyOn(console, 'info').mockImplementation();
+		jest.spyOn(logger, 'error').mockImplementation();
 		jest.spyOn(process, 'cwd').mockReturnValue('/path/to');
 		jest.spyOn(process, 'exit').mockImplementation();
 
+		(getPackageJson as jest.Mock).mockReturnValue({ name: '@chiel/whatever' });
 		(mkdir as jest.Mock).mockImplementation();
 		(writeFile as jest.Mock).mockImplementation();
 
@@ -54,67 +54,34 @@ describe('handler', () => {
 	it('should should create a directory with a package.json for scoped packages', async () => {
 		await handler(defaultArgs);
 
-		const pkg = JSON.stringify({
-			publishConfig: {
-				access: 'private',
-				directory: 'dist',
-			},
-			name: '@chiel/whatever',
-			version: '0.0.0',
-			repository: 'git@github.com:chiel/whatever.git',
-		}, null, '  ');
-
 		expect(mkdir).toHaveBeenCalledWith('/path/to/whatever');
-		expect(writeFile).toHaveBeenCalledWith('/path/to/whatever/package.json', pkg, 'utf8');
-		expect(console.info).toHaveBeenCalledTimes(4);
+
+		expect(writeFile).toHaveBeenCalledWith(
+			'/path/to/whatever/package.json',
+			JSON.stringify({ name: '@chiel/whatever' }, null, '\t'),
+			'utf8',
+		);
+
 		expect(console.info).toHaveBeenCalledWith('Creating directory', chalk.green('whatever'));
 		expect(console.info).toHaveBeenCalledWith('Creating', chalk.green('package.json'), 'in', chalk.green('whatever'));
 		expect(console.info).toHaveBeenCalledWith('Done!');
 	});
 
 	it('should should create a directory with a package.json for unscoped packages', async () => {
-		(prompts as unknown as jest.Mock).mockResolvedValue({ ...defaultAnswers, name: 'beepboop' });
-
+		(getPackageJson as jest.Mock).mockReturnValue({ name: 'whatever' });
 		await handler(defaultArgs);
 
-		const pkg = JSON.stringify({
-			publishConfig: {
-				access: 'private',
-				directory: 'dist',
-			},
-			name: 'beepboop',
-			version: '0.0.0',
-			repository: 'git@github.com:chiel/whatever.git',
-		}, null, '  ');
+		expect(mkdir).toHaveBeenCalledWith('/path/to/whatever');
 
-		expect(mkdir).toHaveBeenCalledWith('/path/to/beepboop');
-		expect(writeFile).toHaveBeenCalledWith('/path/to/beepboop/package.json', pkg, 'utf8');
-		expect(console.info).toHaveBeenCalledTimes(4);
-		expect(console.info).toHaveBeenCalledWith('Creating directory', chalk.green('beepboop'));
-		expect(console.info).toHaveBeenCalledWith('Creating', chalk.green('package.json'), 'in', chalk.green('beepboop'));
+		expect(writeFile).toHaveBeenCalledWith(
+			'/path/to/whatever/package.json',
+			JSON.stringify({ name: 'whatever' }, null, '\t'),
+			'utf8',
+		);
+
+		expect(console.info).toHaveBeenCalledWith('Creating directory', chalk.green('whatever'));
+		expect(console.info).toHaveBeenCalledWith('Creating', chalk.green('package.json'), 'in', chalk.green('whatever'));
 		expect(console.info).toHaveBeenCalledWith('Done!');
-	});
-
-	it('should change the package.json repository field for monorepo packages', async () => {
-		(prompts as unknown as jest.Mock).mockResolvedValue({ ...defaultAnswers, monorepo: true });
-
-		await handler(defaultArgs);
-
-		const pkg = JSON.stringify({
-			publishConfig: {
-				access: 'private',
-				directory: 'dist',
-			},
-			name: '@chiel/whatever',
-			version: '0.0.0',
-			repository: {
-				type: 'git',
-				url: 'git@github.com:chiel/whatever.git',
-				directory: 'packages/whatever',
-			},
-		}, null, '  ');
-
-		expect(writeFile).toHaveBeenCalledWith('/path/to/whatever/package.json', pkg, 'utf8');
 	});
 
 	it('should log an error and exit if a proper error happens', async () => {
