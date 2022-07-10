@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.3](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.7.2...@chiel/nucleus@0.7.3) (2022-07-10)
+
+
+### Bug Fixes
+
+* **nucleus:** .npmrc files are ignored by npm pack ([b3d8382](https://github.com/chiel/nexus/commit/b3d8382e2adeade333e578fbf77827dcdb207675))
+
+
+
+
+
 ## [0.7.2](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.7.1...@chiel/nucleus@0.7.2) (2022-07-10)
 
 
