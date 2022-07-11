@@ -58,8 +58,10 @@ const command: CommandModule = {
 				await next();
 			};
 
+			console.info();
 			await next();
 
+			console.info();
 			console.info('Creating', chalk.green('package.json'), 'in', chalk.green(dirName));
 			await writeFile(path.join(dir, 'package.json'), JSON.stringify(pkg, null, '\t'), 'utf8');
 

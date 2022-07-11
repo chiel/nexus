@@ -17,8 +17,8 @@ describe('applyTemplate', () => {
 	it('should call copy directory for the template files directory', async () => {
 		await applyTemplate('base', '/dest');
 
-		const files = `${src}/files`;
-		expect(copyDirectory).toHaveBeenCalledWith(files, '/dest', expect.any(Function));
+		expect(console.info).toHaveBeenCalledWith('Apply template', chalk.green('base'));
+		expect(copyDirectory).toHaveBeenCalledWith(`${src}/files`, '/dest', expect.any(Function));
 	});
 
 	it('should log a message for each file being processed and return the contents unaltered', async () => {
@@ -26,7 +26,7 @@ describe('applyTemplate', () => {
 
 		const [[,, fp]] = (copyDirectory as jest.Mock).mock.calls;
 
-		fp(`${src}/.npmrc`, 'beepboop');
+		fp(`${src}/files/.npmrc`, 'beepboop');
 		expect(console.info).toHaveBeenCalledWith('    ...copying', chalk.green('.npmrc'));
 	});
 });
