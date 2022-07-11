@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.4](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.7.3...@chiel/nucleus@0.7.4) (2022-07-11)
+
+
+### Bug Fixes
+
+* **nucleus:** adjust scaffold output ([b76d1c7](https://github.com/chiel/nexus/commit/b76d1c757f57b1e9e6ce0c1dca5ce7582cc585a2))
+
+
+
+
+
 ## [0.7.3](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.7.2...@chiel/nucleus@0.7.3) (2022-07-10)
 
 
