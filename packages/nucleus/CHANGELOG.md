@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.8.0...@chiel/nucleus@0.8.1) (2022-07-12)
+
+
+### Bug Fixes
+
+* **nucleus:** install nucleus for base template ([49bdd08](https://github.com/chiel/nexus/commit/49bdd08bd17c1f98ff7b73c6fb527866a50bb7fb))
+
+
+
+
+
 # [0.8.0](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.7.4...@chiel/nucleus@0.8.0) (2022-07-12)
 
 
