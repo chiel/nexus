@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.7.4...@chiel/nucleus@0.8.0) (2022-07-12)
+
+
+### Bug Fixes
+
+* **nucleus:** allow templates without files ([de9dbfe](https://github.com/chiel/nexus/commit/de9dbfe9ecbf1098337e959f6f18fa128ce38751))
+
+
+### Features
+
+* **nucleus:** install dependencies in scaffold ([aa9e41c](https://github.com/chiel/nexus/commit/aa9e41c3ff7459d2d745328942f2e9371a7fa29e))
+
+
+
+
+
 ## [0.7.4](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.7.3...@chiel/nucleus@0.7.4) (2022-07-11)
 
 
