@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import { mkdir, writeFile } from 'fs/promises';
 import prompts from 'prompts';
 
-import { applyTemplate, getPackageJson, logger } from '../../utils';
+import { applyTemplate, executeCommand, getPackageJson, logger } from '../../utils';
 import command from '../scaffold';
 
 jest.mock('fs/promises');
@@ -36,6 +36,7 @@ describe('handler', () => {
 		jest.spyOn(process, 'exit').mockImplementation();
 
 		(applyTemplate as jest.Mock).mockReturnValue({});
+		(executeCommand as jest.Mock).mockResolvedValue(undefined);
 		(getPackageJson as jest.Mock).mockReturnValue({ name: '@chiel/whatever' });
 		(mkdir as jest.Mock).mockImplementation();
 		(writeFile as jest.Mock).mockImplementation();
@@ -56,6 +57,34 @@ describe('handler', () => {
 		await handler(defaultArgs);
 
 		expect(applyTemplate).toHaveBeenCalledWith('base', '/path/to/whatever');
+	});
+
+	it('should install any dependencies that have been defined in applied templates', async () => {
+		(applyTemplate as jest.Mock).mockReturnValue({
+			dependencies: { react: 'latest', 'react-dom': 'latest' },
+		});
+
+		await handler(defaultArgs);
+
+		expect(executeCommand).toHaveBeenCalledWith(
+			'pnpm',
+			['install', 'react@latest', 'react-dom@latest'],
+			'/path/to/whatever',
+		);
+	});
+
+	it('should install any devDependencies that have been defined in applied templates', async () => {
+		(applyTemplate as jest.Mock).mockReturnValue({
+			devDependencies: { '@types/react': 'latest', '@types/react-dom': 'latest' },
+		});
+
+		await handler(defaultArgs);
+
+		expect(executeCommand).toHaveBeenCalledWith(
+			'pnpm',
+			['install', '-D', '@types/react@latest', '@types/react-dom@latest'],
+			'/path/to/whatever',
+		);
 	});
 
 	it('should should create a directory with a package.json for scoped packages', async () => {

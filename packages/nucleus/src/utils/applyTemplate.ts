@@ -4,7 +4,12 @@ import path from 'path';
 
 import copyDirectory from './copyDirectory';
 
-export default async function applyTemplate(name: string, dest: string): Promise<void> {
+interface Manifest {
+	dependencies?: Record<string, string>;
+	devDependencies?: Record<string, string>;
+}
+
+export default async function applyTemplate(name: string, dest: string): Promise<Manifest> {
 	const src = path.join(__dirname, 'templates', name);
 
 	console.info('Applying template', chalk.green(name));
@@ -23,5 +28,12 @@ export default async function applyTemplate(name: string, dest: string): Promise
 			console.info('    ...copying', chalk.green(file.replace(`${files}/`, '')));
 			return contents;
 		});
+	}
+
+	try {
+		// eslint-disable-next-line @typescript-eslint/no-var-requires
+		return require(`${src}/manifest`) as Manifest;
+	} catch (_err: unknown) {
+		return {};
 	}
 }

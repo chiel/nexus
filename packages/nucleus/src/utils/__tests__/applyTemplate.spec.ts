@@ -38,4 +38,26 @@ describe('applyTemplate', () => {
 		fp(`${src}/files/.npmrc`, 'beepboop');
 		expect(console.info).toHaveBeenCalledWith('    ...copying', chalk.green('.npmrc'));
 	});
+
+	it('should return an empty object if a manifest does not exist', async () => {
+		const manifest = await applyTemplate('base', '/dest');
+		expect(manifest).toEqual({});
+	});
+
+	it('should return the manifest for the template if it exists', async () => {
+		jest.mock(
+			path.resolve(__dirname, '../templates/base/manifest'),
+			() => ({
+				dependencies: {},
+				devDependencies: { '@chiel/nucleus': 'latest' },
+			}),
+			{ virtual: true },
+		);
+
+		const manifest = await applyTemplate('base', '/dest');
+		expect(manifest).toEqual({
+			dependencies: {},
+			devDependencies: { '@chiel/nucleus': 'latest' },
+		});
+	});
 });

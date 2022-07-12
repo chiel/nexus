@@ -16,6 +16,7 @@ export default {
 	],
 	external: [
 		'chalk',
+		'child_process',
 		'eslint',
 		'fs/promises',
 		'html-webpack-plugin',

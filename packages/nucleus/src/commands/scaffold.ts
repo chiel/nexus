@@ -4,7 +4,7 @@ import path from 'path';
 import prompts from 'prompts';
 import { CommandModule } from 'yargs';
 
-import { applyTemplate, getPackageJson, logger } from '../utils';
+import { applyTemplate, executeCommand, getPackageJson, logger } from '../utils';
 
 const command: CommandModule = {
 	command: 'scaffold',
@@ -49,11 +49,16 @@ const command: CommandModule = {
 				{ name: 'base', dest: dir },
 			];
 
+			let dependencies: Record<string, string> = {};
+			let devDependencies: Record<string, string> = {};
+
 			const next = async (): Promise<void> => {
 				const template = templates.shift();
 				if (!template) return;
 
-				await applyTemplate(template.name, template.dest);
+				const manifest = await applyTemplate(template.name, template.dest);
+				dependencies = { ...dependencies, ...(manifest.dependencies || {}) };
+				devDependencies = { ...devDependencies, ...(manifest.devDependencies || {}) };
 
 				await next();
 			};
@@ -64,6 +69,20 @@ const command: CommandModule = {
 			console.info();
 			console.info('Creating', chalk.green('package.json'), 'in', chalk.green(dirName));
 			await writeFile(path.join(dir, 'package.json'), JSON.stringify(pkg, null, '\t'), 'utf8');
+
+			const deps = Object.entries(dependencies).map(dep => dep.join('@'));
+			if (deps.length > 0) {
+				console.info();
+				console.info('Installing', chalk.green('dependencies'), '...');
+				await executeCommand('pnpm', ['install', ...deps], dir);
+			}
+
+			const devDeps = Object.entries(devDependencies).map(dep => dep.join('@'));
+			if (devDeps.length > 0) {
+				console.info();
+				console.info('Installing', chalk.green('devDependencies'), '...');
+				await executeCommand('pnpm', ['install', '-D', ...devDeps], dir);
+			}
 
 			console.info('Done!');
 		} catch (err: unknown) {

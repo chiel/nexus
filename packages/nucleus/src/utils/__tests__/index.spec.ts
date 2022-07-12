@@ -1,5 +1,6 @@
 import applyTemplate from '../applyTemplate';
 import copyDirectory from '../copyDirectory';
+import executeCommand from '../executeCommand';
 import fileExists from '../fileExists';
 import getClientEntry from '../getClientEntry';
 import getConfig from '../getConfig';
@@ -11,6 +12,7 @@ describe('index', () => {
 	it('should export all utils', () => {
 		expect(index.applyTemplate).toBe(applyTemplate);
 		expect(index.copyDirectory).toBe(copyDirectory);
+		expect(index.executeCommand).toBe(executeCommand);
 		expect(index.fileExists).toBe(fileExists);
 		expect(index.getClientEntry).toBe(getClientEntry);
 		expect(index.getConfig).toBe(getConfig);
