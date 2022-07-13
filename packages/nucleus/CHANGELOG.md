@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.3](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.8.2...@chiel/nucleus@0.8.3) (2022-07-13)
+
+
+### Bug Fixes
+
+* **nucleus:** include jest-dom eslint plugin ([88b86cc](https://github.com/chiel/nexus/commit/88b86cc05065206f805cb52e84e7092a9c83a024))
+* **nucleus:** make sure ts knows about jest stuff ([8cc65a3](https://github.com/chiel/nexus/commit/8cc65a3254d8fe8753672ba0a0c0748dd51ffdaa))
+* **nucleus:** remove testing library dep ([7e37289](https://github.com/chiel/nexus/commit/7e37289b409111640eacc6f7b847ad68e95f5ace))
+
+
+
+
+
 ## [0.8.2](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.8.1...@chiel/nucleus@0.8.2) (2022-07-13)
 
 
