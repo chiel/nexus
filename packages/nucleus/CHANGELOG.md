@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.4](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.8.3...@chiel/nucleus@0.8.4) (2022-07-13)
+
+
+### Bug Fixes
+
+* **nucleus:** add configs to base template ([bb64967](https://github.com/chiel/nexus/commit/bb649670ccfe277446e3c77ac57712497d11933e))
+* **nucleus:** add react version for eslint ([8b77bf8](https://github.com/chiel/nexus/commit/8b77bf88cae2e0c584dc26b09cb6d521d5e45435))
+
+
+
+
+
 ## [0.8.3](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.8.2...@chiel/nucleus@0.8.3) (2022-07-13)
 
 
