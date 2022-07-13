@@ -2,13 +2,11 @@ module.exports = {
 	parser: '@typescript-eslint/parser',
 	extends: [
 		'eslint:recommended',
-		'plugin:@typescript-eslint/recommended',
 		'plugin:jest/recommended',
 		'plugin:react/recommended',
 		'plugin:react/jsx-runtime',
 	],
 	plugins: [
-		'@typescript-eslint',
 		'jest',
 		'react',
 	],
@@ -178,4 +176,16 @@ module.exports = {
 		'yield-star-spacing': 'error',
 		yoda: ['error', 'never'],
 	},
+
+	overrides: [
+		{
+			files: ['**/*.ts', '**/*.tsx'],
+			extends: [
+				'plugin:@typescript-eslint/recommended',
+			],
+			plugins: [
+				'@typescript-eslint',
+			],
+		},
+	],
 };
