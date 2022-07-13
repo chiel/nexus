@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.5](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.8.4...@chiel/nucleus@0.8.5) (2022-07-13)
+
+
+### Bug Fixes
+
+* **nucleus:** add client scaffold template ([bbae2e6](https://github.com/chiel/nexus/commit/bbae2e67acd660c4708687cec13c7a84ae43f321))
+
+
+
+
+
 ## [0.8.4](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.8.3...@chiel/nucleus@0.8.4) (2022-07-13)
 
 
