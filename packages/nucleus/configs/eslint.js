@@ -3,11 +3,13 @@ module.exports = {
 	extends: [
 		'eslint:recommended',
 		'plugin:jest/recommended',
+		'plugin:jest-dom/recommended',
 		'plugin:react/recommended',
 		'plugin:react/jsx-runtime',
 	],
 	plugins: [
 		'jest',
+		'jest-dom',
 		'react',
 	],
 	env: {
