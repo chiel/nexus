@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
 	collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
 	coverageThreshold: {
@@ -13,5 +15,8 @@ module.exports = {
 	resetMocks: true,
 	restoreMocks: true,
 	rootDir: process.cwd(),
+	setupFilesAfterEnv: [path.join(__dirname, 'jest.setup.ts')],
+	testEnvironment: 'jsdom',
 	testMatch: ['**/__tests__/*.{ts,tsx}'],
+	transformIgnorePatterns: ['/node_modules/(?!@chiel/nucleus/configs)/.*'],
 };
