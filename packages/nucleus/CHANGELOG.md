@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.2](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.8.1...@chiel/nucleus@0.8.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* **nucleus:** add testing utilities ([99f3199](https://github.com/chiel/nexus/commit/99f3199ece3491f9ab08dceb3177d3c91df8f1db))
+* **nucleus:** apply ts linting rules to ts files ([7a71ff9](https://github.com/chiel/nexus/commit/7a71ff9c3f0307481cf7603bb2fac0e0fdafb3ec))
+
+
+
+
+
 ## [0.8.1](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.8.0...@chiel/nucleus@0.8.1) (2022-07-12)
 
 
