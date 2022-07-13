@@ -1,0 +1,25 @@
+import { render, screen } from '@testing-library/react';
+import { Route, Routes } from 'react-router-dom';
+
+import Home from '../../Home';
+import App from '..';
+
+jest.mock('react-router-dom', () => ({ Route: jest.fn(), Routes: jest.fn() }));
+jest.mock('../../Home', () => jest.fn());
+
+describe('App', () => {
+	it('should render the component', () => {
+		(Home as jest.Mock).mockImplementation(() => <p>Home</p>);
+		(Route as jest.Mock).mockImplementation(({ element }) => element);
+		(Routes as jest.Mock).mockImplementation(({ children }) => (
+			<div>
+				<p>Routes</p>
+				{children}
+			</div>
+		));
+
+		render(<App />);
+		expect(screen.getByText('Routes')).toBeInTheDocument();
+		expect(screen.getByText('Home')).toBeInTheDocument();
+	});
+});

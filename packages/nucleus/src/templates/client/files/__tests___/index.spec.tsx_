@@ -1,0 +1,18 @@
+import Root from '../components/Root';
+
+jest.mock('../components/Root', () => jest.fn());
+
+describe('index', () => {
+	beforeEach(() => {
+		jest.resetModules();
+		(Root as jest.Mock).mockImplementation(() => <p>Root</p>);
+	});
+
+	it('should throw an error if the root element is not found', () => {
+		const shouldThrow = () => {
+			require('..');
+		};
+
+		expect(shouldThrow).toThrow('Cannot find root element.');
+	});
+});

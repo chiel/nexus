@@ -16,6 +16,7 @@ interface PackageJson {
 		url: string;
 		directory: string;
 	};
+	scripts: Record<string, string>;
 }
 
 export default function getPackageJson({ monorepo, name, repository }: Options): PackageJson {
@@ -35,5 +36,10 @@ export default function getPackageJson({ monorepo, name, repository }: Options):
 				url: repository,
 				directory: `packages/${dirName}`,
 			},
+		scripts: {
+			lint: 'nucleus lint',
+			start: 'nucleus start',
+			test: 'nucleus test',
+		},
 	};
 }

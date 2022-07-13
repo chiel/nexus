@@ -15,6 +15,11 @@ describe('getPackageJson', () => {
 			name: 'whatever',
 			version: '0.0.0',
 			repository: 'git@github.com:chiel/whatever.git',
+			scripts: {
+				lint: 'nucleus lint',
+				start: 'nucleus start',
+				test: 'nucleus test',
+			},
 		});
 	});
 
@@ -32,6 +37,11 @@ describe('getPackageJson', () => {
 			name: '@chiel/whatever',
 			version: '0.0.0',
 			repository: 'git@github.com:chiel/whatever.git',
+			scripts: {
+				lint: 'nucleus lint',
+				start: 'nucleus start',
+				test: 'nucleus test',
+			},
 		});
 	});
 

@@ -1,0 +1,11 @@
+/* istanbul ignore file */
+import { createRoot } from 'react-dom/client';
+
+import Root from './components/Root';
+
+(() => {
+	const rootEl = document.getElementById('app-root');
+	if (!rootEl) throw new Error('Cannot find root element.');
+	const root = createRoot(rootEl);
+	root.render(<Root />);
+})();

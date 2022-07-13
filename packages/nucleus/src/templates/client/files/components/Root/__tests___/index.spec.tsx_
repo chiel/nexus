@@ -1,0 +1,23 @@
+import { render, screen } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
+
+import App from '../../App';
+import Root from '..';
+
+jest.mock('react-router-dom', () => ({ BrowserRouter: jest.fn() }));
+jest.mock('../../App', () => jest.fn());
+
+describe('Root', () => {
+	it('should render the component', () => {
+		(App as jest.Mock).mockImplementation(() => <p>App</p>);
+		(BrowserRouter as jest.Mock).mockImplementation(({ children }) => (
+			<div>
+				<p>BrowserRouter</p>
+				{children}
+			</div>
+		));
+
+		render(<Root />);
+		expect(screen.getByText('BrowserRouter')).toBeInTheDocument();
+	});
+});

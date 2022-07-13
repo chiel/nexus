@@ -53,10 +53,11 @@ describe('handler', () => {
 		]);
 	});
 
-	it('should always apply the base template', async () => {
+	it('should always apply the base and client template', async () => {
 		await handler(defaultArgs);
 
 		expect(applyTemplate).toHaveBeenCalledWith('base', '/path/to/whatever');
+		expect(applyTemplate).toHaveBeenCalledWith('client', '/path/to/whatever/src');
 	});
 
 	it('should install any dependencies that have been defined in applied templates', async () => {

@@ -47,6 +47,7 @@ const command: CommandModule = {
 
 			const templates: { name: string, dest: string }[] = [
 				{ name: 'base', dest: dir },
+				{ name: 'client', dest: `${dir}/src` },
 			];
 
 			let dependencies: Record<string, string> = {};
@@ -56,6 +57,7 @@ const command: CommandModule = {
 				const template = templates.shift();
 				if (!template) return;
 
+				console.info();
 				const manifest = await applyTemplate(template.name, template.dest);
 				dependencies = { ...dependencies, ...(manifest.dependencies || {}) };
 				devDependencies = { ...devDependencies, ...(manifest.devDependencies || {}) };
@@ -63,7 +65,6 @@ const command: CommandModule = {
 				await next();
 			};
 
-			console.info();
 			await next();
 
 			console.info();
