@@ -4,7 +4,7 @@
 		"directory": "dist"
 	},
 	"name": "@chiel/nucleus",
-	"version": "0.8.5",
+	"version": "0.8.6",
 	"main": "dist/nucleus",
 	"bin": "dist/nucleus",
 	"repository": {

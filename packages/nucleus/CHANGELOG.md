@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.6](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.8.5...@chiel/nucleus@0.8.6) (2022-07-13)
+
+
+### Bug Fixes
+
+* **nucleus:** exclude test files in tsconfig ([8d72f6d](https://github.com/chiel/nexus/commit/8d72f6d47e8711bb4d49f02dcee376f95e5ca78b))
+
+
+
+
+
 ## [0.8.5](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.8.4...@chiel/nucleus@0.8.5) (2022-07-13)
 
 
