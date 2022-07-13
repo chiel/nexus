@@ -1,3 +1,4 @@
 {
-	"extends": "@chiel/nucleus/configs/tsconfig"
+	"extends": "@chiel/nucleus/configs/tsconfig",
+	"exclude": ["**/__tests__/**"]
 }
