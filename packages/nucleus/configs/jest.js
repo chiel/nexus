@@ -10,6 +10,11 @@ module.exports = {
 			statements: 100,
 		},
 	},
+	globals: {
+		'ts-jest': {
+			tsconfig: path.join(__dirname, 'tsconfig.jest.json'),
+		},
+	},
 	modulePathIgnorePatterns: ['<rootDir>/dist'],
 	preset: 'ts-jest',
 	resetMocks: true,
