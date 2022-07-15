@@ -1,5 +1,6 @@
 {
 	"devDependencies": {
-		"@chiel/nucleus": "latest"
+		"@chiel/nucleus": "latest",
+		"typescript": "latest"
 	}
 }
