@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.7](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.8.6...@chiel/nucleus@0.8.7) (2022-07-15)
+
+
+### Bug Fixes
+
+* **nucleus:** add basic .gitignore file ([fa3e89a](https://github.com/chiel/nexus/commit/fa3e89a1d2a1b7745762a3de15ea9e198dd14f39))
+* **nucleus:** add typescript to base template ([ecdab99](https://github.com/chiel/nexus/commit/ecdab9978f9d69d3275a2c1a2119e6fddc021d5f))
+
+
+
+
+
 ## [0.8.6](https://github.com/chiel/nexus/compare/@chiel/nucleus@0.8.5...@chiel/nucleus@0.8.6) (2022-07-13)
 
 
